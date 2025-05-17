@@ -1,10 +1,10 @@
 # Building a Docker Image
 
 ## Dockerfile 
-
-Dockerfile desribed the steps that are required to create an image. This is contained
+Dockerfile desribe the steps that are required to create an image. This is contained
 within the root directory f the source code repository for your application.
 
+### Example:
 Below is an example docker file to containerize a demo NodeJS application.
 
 ```dockerfile
@@ -20,6 +20,7 @@ COPY ./data/app $AP
 
 WORKDIR $AP
 
+RUN sudo apt install curl
 RUN npm init -y
 RUN npm install express
 
@@ -27,6 +28,10 @@ EXPOSE 8080
 
 CMD ["node", "server.js"]
 ```
+
+
+
+
 Explanation : 
 
 You create your image based on a standard NodeJS image available from the docker registry
@@ -63,3 +68,17 @@ This allows to install dependent packages/libraries in the image.
 RUN npm init -y
 RUN npm install express
 ```
+The EXPOSE instruction in a Dockerfile declares the ports a container will listen on at runtime.
+```dockerfile
+EXPOSE 8080
+```
+The CMD instruction in a Dockerfile specifies the default command to execute when a container starts from the image.
+```dockerfile
+CMD ["node", "server.js"]
+```
+
+### Dockerfile Reference
+#### Official reference page
+https://docs.docker.com/reference/dockerfile/
+#### From Internet 
+https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index

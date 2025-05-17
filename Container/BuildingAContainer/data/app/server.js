@@ -39,11 +39,26 @@ function containerInfo(){
 }
 
 
+function healthCheck(){
+    const now = new Date();
+    process.env.TZ = 'America/New_York';
+    const formattedTime = now.toString();
+    const html = `
+    <p>Alive!!</p>
+    <p>${formattedTime}</p>`
+
+    return html
+}
+
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.send(containerInfo());
 });
 
+app.get('/healthcheck', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.send(healthCheck());
+})
 
 const httpServer = http.createServer(app);
 const port = 8080;
