@@ -1,11 +1,14 @@
 # Building a Docker Image
 
 ## Dockerfile 
-Dockerfile desribe the steps that are required to create an image. This is contained
-within the root directory f the source code repository for your application.
+A Dockerfile describes the steps required to create an image. This is contained
+Within the root directory of the source code repository for your application.
 
+Each line in the Dockerfile represents a layer in the resultant image.
+
+![img.png](../BuildingAContainer/images/img.png)
 ### Example:
-Below is an example docker file to containerize a demo NodeJS application.
+Below is an example Dockerfile to containerize a demo Node.js application.
 
 ```dockerfile
 FROM docker.io/node:lts
