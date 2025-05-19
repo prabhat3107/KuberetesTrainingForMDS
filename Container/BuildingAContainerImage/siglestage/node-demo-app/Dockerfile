@@ -4,9 +4,9 @@ LABEL app='ContainerInfo'
 
 ARG email="prabhat3107@gmail.com"
 
-ENV AP="/data/app"
+ENV AP="/app"
 
-COPY ./data/app $AP
+COPY app $AP
 
 WORKDIR $AP
 

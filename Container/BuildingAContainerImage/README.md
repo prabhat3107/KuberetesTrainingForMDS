@@ -16,7 +16,7 @@ ARG email="prabhat3107@gmail.com"
 
 ENV AP="/data/app"
 
-COPY ./data/app $AP
+COPY siglestage/node-demo-app/app $AP
 
 WORKDIR $AP
 
@@ -54,8 +54,9 @@ ENV AP="/data/app"
 ```
 COPY instruction is used to copy files from the local filesystem into the image 
 It is no longer needed to access to the local filesystem to access them once the image is built.
+
 ```dockerfile
-COPY ./data/app $AP
+COPY siglestage/node-demo-app/app $AP
 ```
 WORKDIR allows to change the working directory in the image for the remainning build instructions and the default 
 process that launches with any resulting containers. 
