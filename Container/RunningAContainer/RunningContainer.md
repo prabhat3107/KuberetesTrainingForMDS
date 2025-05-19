@@ -1,5 +1,21 @@
 # Running a Container
 
+#### Creating and Running a Container. 
+
+docker container run  :  
+
+```shell
+
+docker container run --rm -it --name demo-c1 -h ubuntu-h1 ubuntu:latest /bin/bash
+```
+
+
+#### listing running containers : 
+```shell
+docker ps  
+```
+
+
 #### container name : 
 
 Docker automatically gives a random name to a container after creating it. 
