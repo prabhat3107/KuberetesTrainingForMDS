@@ -4,13 +4,17 @@ LABEL app='ContainerInfo'
 
 ARG email="prabhat3107@gmail.com"
 
+RUN apt install curl
+RUN apt install iproute2
+
+
 ENV AP="/app"
 
 COPY app $AP
 
 WORKDIR $AP
 
-RUN apt install curl
+
 RUN npm init -y
 RUN npm install express
 
