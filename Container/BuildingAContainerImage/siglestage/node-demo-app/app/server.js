@@ -4,6 +4,22 @@ const express = require('express');
 const os = require('os');
 const app = express();
 
+function getLocalIPAddresses() {
+  const networkInterfaces = os.networkInterfaces();
+  const ipAddresses = [];
+
+  for (const interfaceName in networkInterfaces) {
+    const interfaceInfo = networkInterfaces[interfaceName];
+    for (const info of interfaceInfo) {
+      if (info.family === 'IPv4' && !info.internal) {
+        ipAddresses.push(info.address);
+      }
+    }
+  }
+  return ipAddresses;
+}
+
+
 function containerInfo(){
     const hostName = os.hostname();
     const osType= os.type();
@@ -11,6 +27,7 @@ function containerInfo(){
     const now = new Date();
     process.env.TZ = 'America/New_York';
     const formattedTime = now.toString();
+    const localIPs = getLocalIPAddresses();
 
     const html = `
     <!DOCTYPE html>
@@ -29,6 +46,7 @@ function containerInfo(){
         <p><strong>Hostname:</strong> <span id="hostname">${hostName}</span></p>
         <p><strong>OS Type:</strong> <span id="osType">${osType}</span></p>
         <p><strong>OS Release:</strong> <span id="osRelease">${osRelease}</span></p>
+        <p><strong>IP ADDRESS:</strong> <span id="ipaddress">${localIPs}</span></p>
         <p><strong>Current Time:</strong> <span id="clock">${formattedTime}</span></p>  
       </div>
     </body>
