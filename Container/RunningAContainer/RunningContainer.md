@@ -33,6 +33,19 @@ docker ps -a
 docker image ls
 ```
 
+#### stopping a container 
+
+```shell
+docker container stop  <container name or container id>
+```
+
+#### auto-restarting a container 
+
+```shell
+docker container run -d -p 8080:8080 -h node-demo-h1 --name node-demo-c1 --restarrt on-failure:3 mds-demo
+```
+
+
 #### container name : 
 
 Docker automatically assigns a random name to a container after it is created. 

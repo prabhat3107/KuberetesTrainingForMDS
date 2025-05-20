@@ -50,6 +50,12 @@ function healthCheck(){
     return html
 }
 
+app.use((req, res, next) => {
+  const timestamp = new Date().toISOString();
+  console.log(`${timestamp} - ${req.method} ${req.url}`);
+  next();
+});
+
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.send(containerInfo());
