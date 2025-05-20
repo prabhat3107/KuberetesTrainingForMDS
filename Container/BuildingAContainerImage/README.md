@@ -6,7 +6,7 @@ Within the root directory of the source code repository for your application.
 
 Each line in the Dockerfile represents a layer in the resultant image.
 
-![img.png](../BuildingAContainer/images/img.png)
+![img.png](pictures/img.png)
 ### Example:
 Below is an example Dockerfile to containerize a demo Node.js application.
 
