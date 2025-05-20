@@ -4,6 +4,7 @@ LABEL app='ContainerInfo'
 
 ARG email="prabhat3107@gmail.com"
 
+RUN apt update
 RUN apt install curl
 RUN apt install iproute2
 
