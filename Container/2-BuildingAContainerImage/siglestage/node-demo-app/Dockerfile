@@ -8,8 +8,6 @@ RUN apt update
 RUN apt install curl
 RUN apt install iproute2 -y
 
-
-
 ENV AP="/app"
 
 COPY app $AP
