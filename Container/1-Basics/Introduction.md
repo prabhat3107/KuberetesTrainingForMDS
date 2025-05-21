@@ -28,3 +28,36 @@ Docker
 containerd
 CRI-O
 Podman
+
+
+#### Namespaces provided by the Linux Kernel.
+
+
+**PID Namespace:**
+.
+Isolates the process tree, allowing processes to have their own process IDs (PIDs) independent of other namespaces. 
+
+**Network Namespace:**
+.
+Isolates network resources, enabling processes to have their own network stack, interfaces, routing tables, and IP addresses. 
+
+**Mount Namespace:**
+.
+Isolates the file system mount points, allowing processes to have their own view of the file system's mounted points. 
+
+**UTS Namespace:**
+.
+Isolates the hostname and domain name of the system, allowing processes to have different hostnames and domain names from each other. 
+
+**IPC Namespace:**
+.
+Isolates inter-process communication (IPC) resources, such as message queues, shared memory, and semaphores. 
+
+**User Namespace:**
+.
+Isolates user IDs and group IDs, allowing processes to have different user and group IDs from other namespaces. 
+
+**Control Group (cgroup) Namespace:**
+.
+Isolates resource control groups, allowing processes to be grouped and have their resource usage managed independently. 
+
