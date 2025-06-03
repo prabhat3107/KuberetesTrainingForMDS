@@ -18,6 +18,11 @@ docker push prabhat3107/rest-api-mysql:latest
 
 ### create a new bridged network 'myqpp-net' 
 
+#### Internal DNS Server:
+Docker creates an internal DNS server for custom networks.
+When you create a Docker network, it automatically configures DNS resolution for containers within that network. 
+This server maps container names to their respective IP addresses within the network.
+
 ```shell
 docker network create myapp-net -d bridge
 ```
@@ -51,4 +56,7 @@ docker ps
 ### open http://localhost:3000/programming-languages
 
 
+### Reference : 
+https://docs.docker.com/reference/
+https://blog.logrocket.com/build-rest-api-node-express-mysql/
 

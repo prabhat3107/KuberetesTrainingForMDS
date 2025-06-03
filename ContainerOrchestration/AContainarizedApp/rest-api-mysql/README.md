@@ -1,7 +1,10 @@
 
 # EXAMPLE REST API app 
 
+## prabhat3107/KubernetesTrainingForMDS
 This app demonstrates RESTful API using Node.js, the Express.js framework, and a MySQL database.
+
+![restApiApp.png](diagrams/restApiApp.png)
 
 ### URI mapping 
 ```text
@@ -45,3 +48,6 @@ curl -i -X DELETE -H 'Accept: application/json' \
 ```shell
 curl http://localhost:3000/programming-languages/16
 ```
+
+Reference : 
+https://blog.logrocket.com/build-rest-api-node-express-mysql/
