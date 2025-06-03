@@ -84,6 +84,30 @@ app.get('/healthcheck', (req, res) => {
     res.send(healthCheck());
 })
 
+
+app.get('/peacock',(req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.send(containerInfo());
+});
+
+
+app.get('/swan',(req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.send(containerInfo());
+});
+
+
+app.get('/parrot',(req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.send(containerInfo());
+});
+
+
+app.get('/cardinal',(req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.send(containerInfo());
+});
+
 const httpServer = http.createServer(app);
 const port = 8080;
 
